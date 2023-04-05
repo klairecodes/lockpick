@@ -1,0 +1,26 @@
+▏░ ░ ░ ░ ░ ░▕
+▏▚ ▇ ▇ ▜ ▃ ▇▕
+▏█ ▄ ▇ ▄ ▃ ▀▕ 🗝
+▏▼ ▼ ▼ ▼ ▼ ▼▕
+
+Legend:
+█ - full key pin
+▼
+
+█ - full driver pin
+
+▄ - half driver pin
+
+▀ - 0 move pin
+
+▚ - serrated pin
+
+▜ - spool pin
+
+░ - regular spring
+
+▕ & ▕ - chamber walls
+
+
+Oh god this must be why no one has made something like this yet:
+https://docs.google.com/spreadsheets/d/1yPInMg8X37B56gQIERq_aUGufz7bae0v4BLPEORcv2M/edit#gid=1846595124
