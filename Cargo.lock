@@ -5,6 +5,7 @@ version = 3
 [[package]]
 name = "lockpick"
 version = "0.1.0"
+<<<<<<< HEAD
 dependencies = [
  "permute",
 ]
@@ -14,3 +15,5 @@ name = "permute"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4fddb8f2cf68c74002bde337a2472e18c870e3464b1f637cc9718f51687e88ca"
+=======
+>>>>>>> f8520d6 (initial tm commit)

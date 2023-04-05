@@ -1,5 +1,5 @@
 use std::io;
-use std::io:Write;
+use std::io::Write;
 use std::collections::HashMap;
 
 //TODO: make these the keys in the texture map
@@ -34,7 +34,7 @@ fn main() {
 
 
     io::stdout().flush().unwrap();
-    println!("You entered: {input}.");
+    println!("You entered: {}.", input.trim());
     // let pin_texture_map: HashMap::from([PinType::KEY, '█',
     // ]);
     // map.insert(Pin_type::Key, key_char)
