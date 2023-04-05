@@ -6,7 +6,5 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-<<<<<<< HEAD
 permute = "0.2.1"
-=======
->>>>>>> f8520d6 (initial tm commit)
+rand = "0.8.5"
