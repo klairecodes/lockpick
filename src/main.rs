@@ -5,6 +5,7 @@ use rand::{
     distributions::{Distribution, Standard},
     Rng, thread_rng,
 };
+use rust_decimal::prelude::*;
 
 //TODO: make these the keys in the texture map
 #[derive(Debug)] // allows printing of this object
@@ -18,26 +19,26 @@ enum PinType {
 #[derive(Debug)]
 struct Pin {
     pin_type: PinType,
-    height: f64,
-    diameter: f64,
+    height: Decimal,
+    diameter: Decimal,
     unicode_repr: char,
 
 }
 
 #[derive(Debug)]
 struct Spring {
-    height: f64,
-    diameter: f64,
+    height: Decimal,
+    diameter: Decimal,
     unicode_repr: char,
-    weight: f64,
+    weight: Decimal,
 }
 
+/*Returns a random pin type, excluding key pins. */
 impl Distribution<PinType> for Standard {
     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> PinType {
         match rng.gen_range(0..=3) {
-            0 => PinType::KEY,
-            1 => PinType::SPOOL,
-            2 => PinType::SERRATED,
+            0 => PinType::SPOOL,
+            1 => PinType::SERRATED,
             _ => PinType::DRIVER,
         }
     }
@@ -49,15 +50,15 @@ fn get_random_pin() -> Pin {
     let mut rng = thread_rng();
 
     // This is done for proper rounding
-    let x: f64 = rng.gen_range(0.1..5.0);
-    let h: f64 = x * 100.0_f64.round() / 100.0;
-    let x: f64 = rng.gen_range(0.077..0.115);
-    let d: f64 = x * 100.0_f64.round() / 100.0;
+    let mut rand_h = rng.gen_range(0.1..5.0);    
+    let rand_height = Decimal::from_f64(rand_h);
+    let mut rand_d = rng.gen_range(0.077..0.115);    
+    let rand_diameter = Decimal::from_f64(rand_d);
 
     let pin = Pin {
         pin_type: rand::random(),
-        height: h,
-        diameter: d,
+        height: rand_height.unwrap().round_dp_with_strategy(1, RoundingStrategy::ToZero),
+        diameter: rand_diameter.unwrap().round_dp_with_strategy(3, RoundingStrategy::ToZero),
         unicode_repr: '█',
     };
     return pin;
